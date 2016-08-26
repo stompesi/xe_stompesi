@@ -1,6 +1,8 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
+/* Custom ------------------------------------------ */
+
 body, html {
   height: 100%;
 }
@@ -8,9 +10,6 @@ body, html {
 body {
   font-family: 'Open Sans', sans-serif;
 }
-
-
-/*ddd*/
 
 .navbar {
   border: 0px;
@@ -21,7 +20,6 @@ body {
   padding-left: 0px;
 }
 
-
 .navbar-right {
   margin-right: 0px;
 }
@@ -30,9 +28,12 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-/**/
 
-/* Main Title*/
+/* ------------------------------------------------------ */
+
+
+/* Main Title ------------------------------------------ */
+
 .main-title {
   font-size: 40px;
   padding-top: 20px;
@@ -53,32 +54,7 @@ body {
   background: rgba(0, 0, 0, 0) !important;
 }
 
-a, 
-a:visited {
-  color: #555555;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: bold;
-} 
-
-a:hover {
-  background: #FF5252 !important;
-  color: white !important;
-  text-decoration: none !important;
-}
-
-a.active {
-  background: #FF5252 !important;
-  color: white !important;
-  text-decoration: none !important;
-}
-
-/* 두번째 줄*/
-.nav-container {
-  background-color: white;
-  border-top: 1px solid #FF5252;
-  border-bottom: 1px solid #FF5252;
-}
+/* ------------------------------------------------------ */
 
 footer {
   height: 50px; 
@@ -87,8 +63,69 @@ footer {
   color: #555555;
 }
 
+/* asdfasdfasdf */
 
-
+#navbar {
+  border-bottom: 1px solid #9FA8DA !important;
+}
 #navbar a {
   font-size: 17px;
+  color: white !important;
 }
+
+#navbar a:hover {
+  background: rgba(159,168,218, 0.47) !important;
+}
+
+#navbar {
+  background: #3F51B5;
+  color: white !important;
+  font-weight: bold;
+}
+
+/* 두번째 줄*/
+.nav-container {
+  background-color: white;
+}
+
+a {
+  color: #555555 !important;
+}
+
+a.active {
+  background: #5C6BC0 !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: white;
+  background: rgba(159,168,218, 0.45) !important;
+  text-decoration: none !important;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus, 
+.nav-pills > li.active > a:hover {
+  color: white !important;;
+  background: #5C6BC0;
+}
+
+#chapter-lsit {
+  /*background: rgba(159,168,218, 0.47) !important;*/
+}
+
+#chapter-lsit a.active {
+  background: rgba(159,168,218, 0.65) !important;
+}
+
+#chapter-lsit a:hover {
+  background: rgba(159,168,218, 0.45) !important;
+  color: white !important;
+}
+
+
+#side-menu a.active {
+  background: rgba(159,168,218, 0.45) !important;
+  color: white !important;
+ }
