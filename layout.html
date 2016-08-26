@@ -1,0 +1,127 @@
+<load target="./lib/bootstrap/css/bootstrap.css" />
+
+<load target="./css/common.css" />
+<load target="./lib/bootstrap/js/bootstrap.js" type="body" />
+
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<include target="_header.html" />
+
+<section class="container" id="content-container">
+	{$content}
+</section>
+
+<!-- <footer role="contentinfo"> 
+	<div class="container" > 
+		Copyright by stompesi
+	</div> 
+</footer> -->
+
+
+<div class="modal fade" id="login-modal" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+        	<span>x</span>
+        </button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body">
+      	<form id="login-form" role="form" action="{getUrl('', 'act', 'procMemberLogin')}" method="post" autocomplete="off">
+        	<input type="hidden" name="act" value="procMemberLogin" />
+			<input type="hidden" name="success_return_url" value="{getCurrentPageUrl()}" />
+
+			<div class="form-group">
+				<label for="id" class="sr-only">ID</label>
+				<input type="text" class="form-control" name="user_id" placeholder="{$lang->user_id}">
+			</div>
+			<div class="form-group">
+				<label for="password" class="sr-only">Password</label>
+				<input type="password" class="form-control" name="password" placeholder="{$lang->password}">
+			</div>
+
+			<div cond="$XE_VALIDATOR_ID == 'layouts/xedition/layout/1' && $XE_VALIDATOR_MESSAGE" class="control-group">
+				<p class="error">{$XE_VALIDATOR_MESSAGE}</p>
+			</div>
+
+			<div class="form-group">
+				<label class="chk_label" for="keep_signed">
+					<input type="checkbox" name="keep_signed" id="keep_signed" value="Y" /> {$lang->keep_signed}
+				</label>
+			</div>
+
+			<div class="text-center">
+				<button class="btn btn-default" data-dismiss="modal">닫기</button>
+				<button id="login-btn" class="btn btn-primary">{$lang->cmd_login}</button>
+			</div>
+		</form>
+
+		<div class="text-center">
+			<a href="{getUrl('act', 'dispMemberFindAccount')}">{$lang->cmd_find_member_account}</a>
+			<span class="f_bar">|</span>
+			<a href="{getUrl('act', 'dispMemberSignUpForm')}">{$lang->cmd_signup}</a>
+		</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="join-modal" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+        	<span>x</span>
+        </button>
+        <h4 class="modal-title">Join</h4>
+      </div>
+      <div class="modal-body">
+        <form id="join-form" role="form">
+
+        <form id="join-form" action="{getUrl('', 'act', 'procMemberSingnup')}" method="post" autocomplete="off">
+
+        	<input type="hidden" name="error_return_url" value="{getCurrentPageUrl()}">
+        	<input type="hidden" name="mid" value="index">
+        	<input type="hidden" name="vid" value="">
+        	<input type="hidden" name="ruleset" value="@insertMember">
+			<input type="hidden" name="act" value="procMemberInsert">
+			<input type="hidden" name="xe_validator_id" value="modules/member/skins">
+			<input type="hidden" name="success_return_url" value="{getCurrentPageUrl()}">
+
+
+			<div class="form-group">
+				<label for="user_id" class="sr-only">ID</label>
+				<input type="text" class="form-control" name="user_id" placeholder="ID">
+			</div>
+			<div class="form-group">
+				<label for="password" class="sr-only">Password</label>
+				<input type="password" class="form-control" name="password" placeholder="Password">
+			</div>
+			
+			<div class="form-group">
+				<label for="password2" class="sr-only">Password Confirm</label>
+				<input type="password" class="form-control" name="password2" placeholder="Password Confirm">
+			</div>
+
+			<div class="form-group">
+				<label for="email_address" class="sr-only">Email</label>
+				<input type="text" class="form-control" name="email_address" placeholder="E-mail">
+			</div>
+
+			<div class="form-group">
+				<label for="nick_name" class="sr-only">Nick Name</label>
+				<input type="text" class="form-control" name="nick_name" placeholder="Nick Name">
+			</div>
+
+			<div class="text-center">
+				<button class="btn btn-default" data-dismiss="modal">닫기</button>
+				<button id="join-btn" class="btn btn-primary">{$lang->cmd_signup}</button>
+			</div>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
