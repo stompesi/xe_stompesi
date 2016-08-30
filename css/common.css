@@ -29,6 +29,10 @@ body {
   padding-bottom: 10px;
 }
 
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: transparent;
+}
+
 /* ------------------------------------------------------ */
 
 
@@ -115,7 +119,8 @@ a:hover {
   /*background: rgba(159,168,218, 0.47) !important;*/
 }
 
-#chapter-lsit a.active {
+#chapter-lsit a.active,
+#chapter-lsit a.active:focus {
   background: rgba(159,168,218, 0.65) !important;
 }
 
@@ -125,7 +130,8 @@ a:hover {
 }
 
 
-#side-menu a.active {
+#side-menu a.active,
+#side-menu a.active:focus {
   background: rgba(159,168,218, 0.45) !important;
   color: white !important;
  }

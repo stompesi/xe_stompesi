@@ -1,0 +1,23 @@
+<ul class="nav navbar-nav navbar-right"> 
+	<!--@if($is_logged)-->
+		<!-- after_login -->
+		<!-- admin -->
+		<li cond="$logged_info->is_admin == 'Y'">
+			<a href="{getUrl('', 'module', 'admin')}" target="_blank" title="{$lang->cmd_management}">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+				<span> {$lang->cmd_management}</span>
+			</a>
+		</li>
+		<li><a href="{getUrl('act', 'dispMemberLogout')}">{$lang->cmd_logout}</a></li>
+		<!-- /after_login -->
+	<!--@else-->
+		<!-- before_login -->
+		<li>
+			<a href="#" data-toggle="modal" data-target="#login-modal">{$lang->cmd_login}</a>
+		</li> 
+		<li>
+			<a href="#" data-toggle="modal" data-target="#join-modal">{$lang->cmd_signup}</a>
+		</li>
+		<!-- /before_login -->
+	<!--@end-->
+</ul> 
